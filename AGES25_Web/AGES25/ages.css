@@ -1,0 +1,82 @@
+
+<style>
+body {
+    font-family: "Lato", sans-serif;
+    transition: background-color 2s;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+#main {
+    transition: margin-left .5s;
+    padding: 16px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+.fullBox {
+background-color:#ffffcc;
+}
+
+.contentBox {
+background-color:#B2B2B2;
+padding: 20px;
+text-align: justify;
+}
+
+.contentBox div {
+	
+    /* width: 90%;
+    height: 100px;  */
+    background-color: grey;
+    box-shadow: 10px 10px 5px #888888;
+    padding: 5px;
+    margin:auto;
+}
+
+.contentBox img {
+	
+    /* width: 90%;
+    height: 100px;  */
+    background-color: grey;
+    box-shadow: 3px 3px 1px #B2B2B2;
+    padding: 5px;
+    margin:auto;
+}
+
+</style>
