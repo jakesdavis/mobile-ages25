@@ -30,6 +30,7 @@ export interface PageInterface {
   tabComponent?: any;
 }
 
+location.hash = "";
 @Component({
   templateUrl: 'app.template.html'
 })
@@ -70,15 +71,19 @@ export class ConferenceApp {
   ) {
 
     // Check if the user has already seen the tutorial
-    this.storage.get('hasSeenTutorial')
-      .then((hasSeenTutorial) => {
-        if (hasSeenTutorial) {
-          this.rootPage = TabsPage;
-        } else {
-          this.rootPage = TutorialPage;
-        }
-        this.platformReady()
-      });
+    /*  this.storage.get('hasSeenTutorial')
+       .then((hasSeenTutorial) => {
+         if (hasSeenTutorial) {
+           this.rootPage = TabsPage;
+         } else {
+           this.rootPage = TutorialPage;
+         }
+         this.rootPage = TabsPage;
+         this.platformReady()
+       }); */
+    console.log(TutorialPage);
+    this.rootPage = TabsPage;
+    this.platformReady()
 
     // load the conference data
     confData.load();
@@ -121,7 +126,7 @@ export class ConferenceApp {
   }
 
   openTutorial() {
-    this.nav.setRoot(TutorialPage);
+    /* this.nav.setRoot(TutorialPage); */
   }
 
   listenToLoginEvents() {

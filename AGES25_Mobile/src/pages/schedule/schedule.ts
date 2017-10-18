@@ -30,7 +30,6 @@ export class SchedulePage {
   queryText = '';
   segment = 'all';
   excludeTracks: any = [];
-  shownSessions: any = [];
   groups: any = [];
   confDate: string;
 
@@ -55,8 +54,8 @@ export class SchedulePage {
     this.scheduleList && this.scheduleList.closeSlidingItems();
 
     this.confData.getTimeline(this.dayIndex, this.queryText, this.excludeTracks, this.segment).subscribe((data: any) => {
-      this.shownSessions = data.shownSessions;
-      this.groups = data.groups;
+      this.groups = data;
+      console.log(this.groups);
     });
   }
 
@@ -150,8 +149,9 @@ export class SchedulePage {
 
   doRefresh(refresher: Refresher) {
     this.confData.getTimeline(this.dayIndex, this.queryText, this.excludeTracks, this.segment).subscribe((data: any) => {
-      this.shownSessions = data.shownSessions;
       this.groups = data.groups;
+
+      console.log(this)
 
       // simulate a network request that would take longer
       // than just pulling from out local json file
